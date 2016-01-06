@@ -6,6 +6,7 @@
 /*----------------------------------------------------------------------------*/
 package org.usfirst.frc.team3807.robot;
 
+import org.usfirst.frc.team3807.robot.commands.Auto;
 import org.usfirst.frc.team3807.robot.commands.CommandBase;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -21,28 +22,36 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  * directory.
  */
 public class Robot extends IterativeRobot {
+	Auto auto;
+	
+	
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
 	public void robotInit() {
 		CommandBase.init();
+		auto = new Auto();
 	}
 
 	public void autonomousInit() {
+		
 	}
 
 	/**
 	 * This function is called periodically during autonomous
 	 */
 	public void autonomousPeriodic() {
+		Scheduler.getInstance().add(auto);
 			Scheduler.getInstance().run();
 	}
 
 	public void cancelAuto() {
+		
 	}
 
 	public void teleopInit() {
+		auto.cancel();
 	}
 
 	/**

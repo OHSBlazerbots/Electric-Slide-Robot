@@ -8,5 +8,11 @@ package org.usfirst.frc.team3807.robot;
  */
 public class RobotMap {
 
+	//ports for the wheels, PWM
+	public static int FRONT_LEFT = 0;
+	public static int FRONT_RIGHT = 1;
+	public static int BACK_LEFT = 2;
+	public static int BACK_RIGHT = 3;
 	
+	public static int JOYSTICK_PORT = 0;
 }
